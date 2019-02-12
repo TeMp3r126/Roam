@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 namespace Roam;
-
 use pocketmine\plugin\PluginBase;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -12,6 +11,11 @@ use pocketmine\Player;
 use pocketmine\utils\TextFormat;
 
 class Roam extends PluginBase {
+
+        public function onEnable(){
+            $this->getLogger()->info(TextFormat::GREEN. "Roam Enabled: Made by TeMp3r126");
+        }
+
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args): bool{
         $cmd = strtolower($cmd->getName());
 		$count = count($args);
@@ -25,7 +29,7 @@ class Roam extends PluginBase {
 					if ($player->hasPermission("roam")){
 					if ($player->getGamemode() == 3){
 					$player->sendMessage("You are already in Roaming mode");
-          $player->setGamemode(0);
+                    $player->setGamemode(0);
 						} else {
 							$player->setGamemode(3);
 							$player->sendMessage("You are now in Roaming mode");
@@ -39,5 +43,9 @@ class Roam extends PluginBase {
 									break;
 										}
 		return true;
-	    }
+        }
+        
+        public function onDisable(){
+            $this->getLogger()->info(TextFormat::RED. "Roam Disabled");
+        }
     }

@@ -1,5 +1,9 @@
 name: Roam
 main: Roam\Roam
-version: 1.0.2
+version: 1.0.3
 api: 3.2.2
 author: TeMp3r126
+commands:
+    roam:
+        description: Lets u Roam around areas!
+        permission: Roam.command

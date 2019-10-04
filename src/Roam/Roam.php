@@ -29,7 +29,7 @@ class Roam extends PluginBase {
 					if ($player->hasPermission("roam")){
 					if ($player->getGamemode() == 3){
 					$player->sendMessage("You are already in Roaming mode");
-                    $player->setGamemode(0);
+                    			$player->setGamemode(0);
 						} else {
 							$player->setGamemode(3);
 							$player->sendMessage("You are now in Roaming mode");
